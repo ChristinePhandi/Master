@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Converter</title>
+  <link rel='stylesheet' type='text/css' href='style.css'>
+</head>
+
+<body>
+
+      <h1> CONVERTER </h1>
+
+    <div class='temp-converter'>
+      <h1>Temperature Converter</h1>
+        <div class='projects-button'>Recent Projects</div>
+        <div class='projects'>
+        <table>
+          <tr>
+            <td>Celcius</td>
+            <td><input id="Celcius" type="number" step="any" placeholder="Celcius"
+              onchange="CConverter(this.value)"></td>
+          </tr>
+          <tr>
+            <td>Fahrenheit</td>
+            <td><input id="Fahrenheit" type="number" step="any" placeholder="Fahrenheit"
+              onchange="FConverter(this.value)"></td>
+          </tr>
+          <tr>
+            <td>Reamur</td>
+            <td><input id="Reamur" type="number" step="any" placeholder="Reamur"
+              onchange="RConverter(this.value)"></td>
+          </tr>
+          <tr>
+            <td>Kelvin</td>
+            <td><input id="Kelvin" type="number" step="any" placeholder="Kelvin"
+              onchange="KConverter(this.value)"></td>
+          </tr>
+        </table>
+        </div>
+    </div>
+  </div>
+
+       <div class='weight-converter'>
+      <h1> Weight Converter</h1>
+        <div class='projects-button' >Recent Projects</div>
+        <div class='projects'>
+        <table>
+          <tr>
+            <td>Pounds</td>
+            <td><input id="pounds" type="number" min="0" step="any" placeholder="pounds"
+             onchange="PoundConverter(this.value)"></td>
+          </tr>
+          <tr>
+            <td>Kilograms</td>
+            <td><input id="kilograms" type="number" min="0" step="any" placeholder="kilograms"
+             onchange="KilogramConverter(this.value)"></td>
+          </tr>
+          <tr>
+            <td>Grams</td>
+            <td><input id="grams" type="number" min="0" step="any" placeholder="grams"
+             onchange="GramConverter(this.value)"></td>
+          </tr>
+          <tr>
+            <td>Ounces</td>
+            <td><input id="ounces" type="number" min="0" step="any" placeholder="ounces"
+             onchange="OunceConverter(this.value)"></td>
+          </tr>
+          <tr>
+            <td>Tons</td>
+            <td><input id="tons" type="number" min="0" step="any" placeholder="tons"
+             onchange="TonConverter(this.value)"></td>
+          </tr>
+        </table>
+        </div>
+    </div>
+     
+  <script>
+function CConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("Fahrenheit").value=(valNum*1.8)+32;
+  document.getElementById("Kelvin").value=valNum+273;
+  document.getElementById("Reamur").value=valNum*0.8;
+}
+
+function FConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("Celcius").value=(valNum-32)/1.8;
+  document.getElementById("Kelvin").value=((valNum-32)/1.8)+273;
+  document.getElementById("Reamur").value=(valNum-32)*0.4;
+}
+
+function RConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("Celcius").value=valNum*1.25;
+  document.getElementById("Kelvin").value=(valNum*1.25)+273;
+  document.getElementById("Fahrenheit").value=(valNum*2.25)+32;
+}
+
+function KConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("Celcius").value=valNum-273;
+  document.getElementById("Fahrenheit").value=((valNum-273)*1.8)+32;
+  document.getElementById("Reamur").value=(valNum-273)*0.8;
+}
+
+function PoundConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("kilograms").value=valNum/2.2046;
+  document.getElementById("grams").value=valNum/0.0022046;
+  document.getElementById("ounces").value=valNum*16;
+  document.getElementById("tons").value=valNum/2204.6;
+}
+
+function KilogramConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("pounds").value=valNum*2.2046;
+  document.getElementById("grams").value=valNum*1000;
+  document.getElementById("ounces").value=valNum*35.274;
+  document.getElementById("tons").value=valNum/1000;
+}
+
+function GramConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("pounds").value=valNum*0.0022046;
+  document.getElementById("kilograms").value=valNum/1000;
+  document.getElementById("ounces").value=valNum*0.035274;
+  document.getElementById("tons").value=valNum/1000000;
+}
+
+function OunceConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("pounds").value=valNum*0.0625;
+  document.getElementById("kilograms").value=valNum/35.274;
+  document.getElementById("grams").value=valNum/0.035274;
+  document.getElementById("tons").value=valNum/35274;
+}
+
+function TonConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("pounds").value=valNum*2204.6;
+  document.getElementById("kilograms").value=valNum*1000;
+  document.getElementById("grams").value=valNum*1000000;
+  document.getElementById("ounces").value=valNum*35274;
+}
+</script>
+</body>
+
+</html>
